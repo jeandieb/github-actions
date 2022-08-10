@@ -39,6 +39,7 @@ jobs:
           #git config --global branch.main.remote "origin"
           #git config --global branch.main.merge "refs/heads/main"
           #git config --global --list
+          cmdkey /add:windows-latest /user:jeandieb /pass:johnny4HUB
           cmdkey /list
           #git add .
           #git commit -m "test push"
