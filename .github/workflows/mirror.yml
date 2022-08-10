@@ -30,6 +30,11 @@ jobs:
           cd test
           git clone https://github.com/jeandieb/test-mirror.git
           ls
+          cd test-mirror
+          touch test.txt
+          git add .
+          git commit -m "test push"
+          git push origin main
            
       - name: mirror-repository
         # You may pin to the exact commit or the version.
