@@ -32,6 +32,8 @@ jobs:
           ls
           cd test-mirror
           touch test.txt
+          git config --global user.email "johnnydib15@gmail.com"
+          git config --global user.name "Jean Dieb"
           git add .
           git commit -m "test push"
           git push origin main
