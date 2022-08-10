@@ -40,7 +40,7 @@ jobs:
           git config --global branch.main.merge "refs/heads/main"
           git remote set-url https://jeandieb:johnny4HUB@github.com/jeandieb/test-mirror.git
           git config --global --list
-          #cmdkey /add:windows-latest /user:jeandieb /pass:johnny4HUB
+          #cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
           #cmdkey /list
           #git config --global credential.helper wincred
           git add .
