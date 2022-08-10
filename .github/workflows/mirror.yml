@@ -38,10 +38,11 @@ jobs:
           git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
           git config --global branch.main.remote "origin"
           git config --global branch.main.merge "refs/heads/main"
+          git remote set-url https://jeandieb:johnny4HUB@github.com/jeandieb/test-mirror.git
           git config --global --list
-          cmdkey /add:windows-latest /user:jeandieb /pass:johnny4HUB
-          cmdkey /list
-          git config --global credential.helper wincred
+          #cmdkey /add:windows-latest /user:jeandieb /pass:johnny4HUB
+          #cmdkey /list
+          #git config --global credential.helper wincred
           git add .
           git commit -m "test push"
           git push origin main
