@@ -32,23 +32,23 @@ jobs:
           #ls
           cd test-mirror
           git config --list
-         # echo some-text  > test.txt
-        #  git config --global user.email "johnnydib15@gmail.com"
-        #  git config --global user.name "Jean Dieb"
+          echo some-text  > test.txt
+          #git config --global user.email "johnnydib15@gmail.com"
+          #git config --global user.name "Jean Dieb"
           #git config --global remote.origin.url "https://github.com/jeandieb/test-mirror.git"
           #git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
           #git config --global branch.main.remote "origin"
           #git config --global branch.main.merge "refs/heads/main"
           #git remote set-url https://jeandieb:johnny4HUB@github.com/jeandieb/test-mirror.git
-         # git remote set-url origin https://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@github.com/jeandieb/test-mirror.git
-         # git pull origin main
+          git remote set-url origin https://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@github.com/jeandieb/test-mirror.git
+          git pull origin main
           #git config --global --list
           #cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
           #cmdkey /list
           #git config --global credential.helper wincred
-          #git add .
-          #git commit -m "test push"
-          #git push origin main
+          git add .
+          git commit -m "test push"
+          git push origin main
           
 #       - name: mirror-repository
 #         # You may pin to the exact commit or the version.
