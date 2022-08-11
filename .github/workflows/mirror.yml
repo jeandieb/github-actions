@@ -33,8 +33,8 @@ jobs:
           cd test-mirror
           git config --list
           echo some-text  > test.txt
-          #git config --global user.email "johnnydib15@gmail.com"
-          #git config --global user.name "Jean Dieb"
+          git config --global user.email "johnnydib15@gmail.com"
+          git config --global user.name "Jean Dieb"
           #git config --global remote.origin.url "https://github.com/jeandieb/test-mirror.git"
           #git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
           #git config --global branch.main.remote "origin"
