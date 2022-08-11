@@ -6,8 +6,11 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
+    paths:
+      - 'src/helpers/get-changed-files.ts'
   pull_request:
     branches: [ "main" ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,6 +40,7 @@ jobs:
     name: Push Changes to Target
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    needs: Get_Changed_Files
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
