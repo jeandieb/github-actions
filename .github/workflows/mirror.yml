@@ -26,10 +26,10 @@ jobs:
       
       - name: dummy-jobs
         run: |
-          mkdir test
-          cd test
+          #mkdir test
+          #cd test
           git clone https://github.com/jeandieb/test-mirror.git
-          ls
+          #ls
           cd test-mirror
           echo some-text  > test.txt
           git config --global user.email "johnnydib15@gmail.com"
