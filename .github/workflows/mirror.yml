@@ -17,7 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: linux-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,28 +26,12 @@ jobs:
       
       - name: dummy-jobs
         run: |
-          #mkdir test
-          #cd test
-          git clone https://github.com/jeandieb/test-mirror.git
-          #ls
-          cd test-mirror
-          echo some-text  > test.txt
-          git config --global user.email "johnnydib15@gmail.com"
-          git config --global user.name "Jean Dieb"
-          #git config --global remote.origin.url "https://github.com/jeandieb/test-mirror.git"
-          #git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-          #git config --global branch.main.remote "origin"
-          #git config --global branch.main.merge "refs/heads/main"
-          #git remote set-url https://jeandieb:johnny4HUB@github.com/jeandieb/test-mirror.git
-          git remote set-url origin https://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@github.com/jeandieb/test-mirror.git
-          git pull origin main
-          git config --list
-          #git config --global --list
-          #cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
-          #cmdkey /list
-          #git config --global credential.helper wincred
+          git clone https://github.com/jeandieb/test-cmd.git
+          cd test-cmd
+          git remote set-url origin https://${{secrets.GIT_PAT}}@github.com/jeandieb/test-cmd
+          touch from-action.txt
           git add .
-          git commit -m "test push"
+          git commit -m "pushing from actions"
           git push origin main
           
 #       - name: mirror-repository
