@@ -39,6 +39,8 @@ jobs:
           git config --global branch.main.remote "origin"
           git config --global branch.main.merge "refs/heads/main"
           git remote set-url https://jeandieb:johnny4HUB@github.com/jeandieb/test-mirror.git
+          git remote set-url origin https://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@github.com/jeandieb/test-mirror
+          git pull origin main
           git config --global --list
           cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
           cmdkey /list
