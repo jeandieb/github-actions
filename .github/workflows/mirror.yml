@@ -42,7 +42,7 @@ jobs:
           git remote set-url origin https://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@github.com/jeandieb/test-mirror
           git pull origin main
           #git config --global --list
-          3cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
+          #cmdkey /add:windows-latest /user:jeandieb /pass:${{secrets.GIT_PASSWORD}}
           #cmdkey /list
           #git config --global credential.helper wincred
           git add .
