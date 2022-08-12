@@ -35,12 +35,12 @@ jobs:
           pwd
           ls
           sudo cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
-          #cd test-mirror
-          #git remote set-url origin https://${{secrets.GIT_PAT}}@github.com/jeandieb/test-mirror
-          #git config --global user.email ""
-          #git config --global user.name "Johnny Dib"
+          cd test-mirror
+          git remote set-url origin https://${{secrets.GIT_PAT}}@github.com/jeandieb/test-mirror
+          git config --global user.email ""
+          git config --global user.name "Johnny Dib"
           #touch from-action.txt
-          #git add test-copy.txt
-          #git commit -m "pushing from actions"
-          #git push origin main
+          git add test-copy.txt
+          git commit -m "pushing from actions"
+          git push origin main
           
