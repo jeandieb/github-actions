@@ -29,6 +29,8 @@ jobs:
         run: |
           mkdir repositories
           cd repositories
+          ls
+          pwd
           git clone https://github.com/jeandieb/github-actions.git
           git clone https://github.com/jeandieb/test-mirror.git
           sudo cp /repositories/github-actions/test-copy.txt /repositories/test-mirror
