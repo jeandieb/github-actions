@@ -29,12 +29,12 @@ jobs:
         run: |
           pwd
           ls
-          cd
+          cd ..
           pwd
           git clone https://github.com/jeandieb/test-mirror.git
           pwd
           ls
-          #sudo cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
+          sudo cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
           #cd test-mirror
           #git remote set-url origin https://${{secrets.GIT_PAT}}@github.com/jeandieb/test-mirror
           #git config --global user.email ""
