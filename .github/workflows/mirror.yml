@@ -36,6 +36,7 @@ jobs:
           git config --global user.email ""
           git config --global user.name "Johnny Dib"
           git add test-copy.txt
+          git add test-copy2.txt
           git commit -m "pushing from actions"
           git push origin main
           
