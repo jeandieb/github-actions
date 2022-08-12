@@ -27,6 +27,7 @@ jobs:
       
       - name: copy-paste-push
         run: |
+          ls
           cd
           git clone https://github.com/jeandieb/test-mirror.git
           sudo cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
