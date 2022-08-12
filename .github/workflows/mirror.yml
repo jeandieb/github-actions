@@ -6,8 +6,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-    paths:
-      - 'src/helpers/get-changed-files.ts'
   pull_request:
     branches: [ "main" ]
 
@@ -17,45 +15,29 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  Get_Changed_Files:
-    name: Get Changed Files from Source
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          token: ${{ secrets.GIT_PAT }}
-
-      - uses: ./
-        id: changed
-        with:
-          helper: get-changed-files
-          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-
-      - run: echo "Changed files are ${{ steps.changed.outputs.output }}"
-  
   Push_Changes:
     name: Push Changes to Target
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    needs: Get_Changed_Files
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: dummy-jobs
+      - name: copy-paste-push
         run: |
+          mkdir repositories
+          cd repositories
+          git clone https://github.com/jeandieb/github-actions.git
           git clone https://github.com/jeandieb/test-mirror.git
+          sudo cp /repositories/github-actions/test-copy.txt /repositories/test-mirror
           cd test-mirror
           git remote set-url origin https://${{secrets.GIT_PAT}}@github.com/jeandieb/test-mirror
           #git config --global user.email ""
           git config --global user.name "Johnny Dib"
           touch from-action.txt
-          git add .
+          git add test-copy.txt
           git commit -m "pushing from actions"
           git push origin main
           
