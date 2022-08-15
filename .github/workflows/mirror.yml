@@ -26,6 +26,7 @@ jobs:
       - name: copy-paste-branch-PR
         run: |
           cd ..
+          git config --list
           git clone https://github.com/jeandieb/test-mirror.git
           sudo cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
           sudo cp /home/runner/work/github-actions/github-actions/test-copy2.txt /home/runner/work/github-actions/test-mirror
