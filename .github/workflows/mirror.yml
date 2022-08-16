@@ -29,6 +29,9 @@ jobs:
           git config --list
           git clone https://github.com/jeandieb/test-mirror.git
           cp /home/runner/work/github-actions/github-actions/test-copy.txt /home/runner/work/github-actions/test-mirror
+          
+          sudo -v
+          
           sudo cp /home/runner/work/github-actions/github-actions/test-copy2.txt /home/runner/work/github-actions/test-mirror
           sudo cp /home/runner/work/github-actions/github-actions/number.csv /home/runner/work/github-actions/test-mirror
           cd test-mirror
