@@ -44,7 +44,7 @@ jobs:
           git add test-copy2.txt
           git add number.csv
           git commit -m "pushing from actions"
-          git push origin update-files
+          git push origin update-files --force
           
           
           gh pr create --base main --head update-files --title "from GitHub CLI" --body "creating a PR from an Action using GitHub CLI"
